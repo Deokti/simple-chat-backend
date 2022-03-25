@@ -8,8 +8,7 @@
     "dev": "nodemon",
     "build": "tsc",
     "start": "node ./dist/main.js",
-    "lint": "eslint ./src/**",
-    "postinstall": "npm run build"
+    "lint": "eslint ./src/**"
   },
   "author": "",
   "license": "ISC",
