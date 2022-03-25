@@ -6,10 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
-    "build": "npx --package=typescript -- tsc",
+    "build": "npx --package typescript tsc --init",
     "start": "node ./dist/main.js",
     "lint": "eslint ./src/**",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "gitupdate": "git add . && git commit -m 'feat: update' && git push"
   },
   "author": "",
   "license": "ISC",
