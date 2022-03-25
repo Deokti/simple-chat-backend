@@ -77,7 +77,7 @@ export class App {
     socket.on("JOINED", ({ username, uid }) => {
       const newUser = { username, uid, socketId: socket.id };
       updateUsers(newUser);
-      socket.to(ROOT).emit("SET_USERS", newUser);
+      socket.to(ROOT).emit("SET_USERS", getUsers());
     });
 
     socket.on("SEND_MESSAGE", ({ message, user, _id }) => {
