@@ -34,7 +34,11 @@ export class App {
     @inject(INVERSIFY_TYPES.LoggerService) private LoggerService: LoggerService) {
     this.app = express();
     this.server = createServer(this.app);
-    this.io = new Server(this.server, { cors: { origin: '*' } });
+    this.io = new Server(this.server, {
+      cors: { origin: '*' },
+      pingTimeout: 600000,
+      pingInterval: 600000,
+    });
     this.port = PORT;
   }
 
