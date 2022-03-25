@@ -14,7 +14,7 @@ import {
   updateMessages,
   updateUsers
 } from "./database/database";
-export const PORT = "8888";
+export const PORT = process.env.PORT || "5000";
 
 const CHAT_VALUE = {
   users: "users",
@@ -97,6 +97,6 @@ export class App {
     this.useRoutes();
     this.useConnected();
     this.server.listen(this.port);
-    this.LoggerService.info(`Запущен сервер`);
+    this.LoggerService.info(`Запущен сервер на ${PORT} порту.`);
   }
 }
